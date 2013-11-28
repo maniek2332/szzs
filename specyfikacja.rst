@@ -41,9 +41,9 @@ Ułatwia on również również pracę klubom sportowym zarejestrowanym w związ
 Słownik pojęć
 =============
 
-    * *Administrator systemu* - osoba zarządzająca całym systemem
-      oraz rejestracjami kont klubów. Administrator posiada władzę
-      do zatwierdzania akcji moderowanych.
+    * *Administrator systemu* - osoba zarządzająca całym systemem.
+      Jest odpowiedzialny za rejestrację kont klubów.
+      Administrator posiada władzę do zatwierdzania akcji moderowanych.
     * *Klub* - użytkownik reprezentujący klub
       (zwany również menedżerem klubu), ma on możliwość rejestracji
       zawodników.
@@ -52,7 +52,7 @@ Słownik pojęć
     * *Zawodnik* - informacje o realnej osobie przypisanej do klubu,
       zawodnik nie ma możliwości logowania się do systemu.
     * *Użytkownik* - Administrator lub Klub
-    * *Akcja moderowana* - akcja, która musi zostać zatwierdzona
+    * *Akcja moderowana* - akcja, która musi zostać zatwierdzona przez
       administratora
     * *Wydarzenie* - wydarzenie sportowe, wprowadzane do systemu przez
       administratora.
@@ -147,42 +147,70 @@ są menedżerowie klubów, którzy mogą zgłosić swoją chęć uczestnictwa
 w wydarzeniu.
 
 
-Wymagania systemowe
-===================
+Wymagania funkcjonalne
+======================
 
 .. note::
 
     TODO
 
-Logowanie do systemu
---------------------
+Autoryzacja
+-----------
 
-System umożliwia logowanie się użytkowników do systemu.
+Logowanie
+^^^^^^^^^
+
+* System umożliwia logowanie się użytkowników do systemu.
 
 .. note::
 
     Tu obrazek
 
-W tym celu wymagane jest od użytkownika podanie loginu i hasła.
-Następnie podane login i hasło są porównywane z obiektami klasy
-``Użytkownik``. Jeśli nie udało się dopasować żadnego użytkownika
-wyświetlony zostaje komunikat "Niepoprawny login lub hasło".
+* W tym celu wymagane jest od użytkownika podanie loginu i hasła.
+* Podane login i hasło są porównywane z obiektami klasy ``Użytkownik``.
+* Jeśli nie udało się dopasować żadnego użytkownika
+  wyświetlony zostaje komunikat "Niepoprawny login lub hasło".
 
 .. note::
 
     Tu też obrazek
 
-Dodawanie klubów
-----------------
-
-Dodawanie zawodników
---------------------
-
 Zmiana hasła
-------------
+^^^^^^^^^^^^
+
+Przypomnienie hasła
+^^^^^^^^^^^^^^^^^^^
+
+
+Zarządzanie klubami
+-------------------
+
+Dodanie klubu
+^^^^^^^^^^^^^
+
+Lista klubów
+^^^^^^^^^^^^
+
+Edycja klubu
+^^^^^^^^^^^^
+
+
+Zarządzanie zawodnikami
+-----------------------
+
+Dodanie zawodnika
+^^^^^^^^^^^^^^^^^
+
+Zatwierdzenie zawodnika
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Edycja zawodnika
+^^^^^^^^^^^^^^^^
 
 
 Wymagania niefunkcjonalne
 =========================
 
+.. note::
 
+    TODO
