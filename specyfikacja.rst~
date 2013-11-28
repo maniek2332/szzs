@@ -189,9 +189,7 @@ Zmiana hasła
 
 Przypomnienie hasła
 ^^^^^^^^^^^^^^^^^^^
-* Jest to opracja dla niezalogowanego użytkownika. Wywoływana jest poprzez wybranie linku "Przypomnienie hasła" na stronie logowania do systemu. Użytkownik przekierowany jest na stronę z formularzem z polem tekstowym na jego adres e-mail. Po wpisaniu danych są one sprawdzane pod kątem tego czy istnieje w bazie użytkownik z takim adresem e-mail. Po nie poprawnym dopasowaniu wyświetlany jest napis z informacją "Brak użytkownika w systemie z takim adresem e-mail". W przeciwnym wypadku system wysyła na adres podany przez użytkownika wiadomość e-mail z linkiem resetującym hasło. Po wybraniu linku Użytkownik przekierowany jest do strony z formularzem z dwoma polami tesktowymi. Po wpisaniu dwóch nowych haseł i zatwierdzeniu przyciskiem, hasło użytkownika zostaje sprawdzone pod kątem poprawności. Jeśli jest niepoprawne można wpisać znowu nowe hasło w polach. Po udanej walidacji hasło zostaje zmienione na nowe. Użytkownik jest informowany o tym komunikatem i po 3 sekundach użytkownik przekierowany jest do panelu użytkownika.
-.. note::
-    Obrazek: pomyslna zmiana hasła
+* Jest to opracja dla niezalogowanego użytkownika. Wywoływana jest poprzez wybranie linku "Przypomnienie hasła" na stronie logowania do systemu. Użytkownik przekierowany jest na stronę z formularzem z polem tekstowym na jego adres e-mail. Po wpisaniu danych są one sprawdzane pod kątem tego czy istnieje w bazie użytkownik z takim adresem e-mail. Po nie poprawnym dopasowaniu wyświetlany jest napis z informacją "Brak użytkownika w systemie z takim adresem e-mail". W przeciwnym wypadku system wysyła na adres podany przez użytkownika wiadomość e-mail z linkiem resetującym hasło. Po wybraniu linku Użytkownik przekierowany jest do strony z formularzem z dwoma polami tesktowymi. Po wpisaniu dwóch nowych haseł i zatwierdzeniu przyciskiem hasło użytkownika zostaje zmienione na nowe.
 Zarządzanie klubami
 -------------------
 
