@@ -1,4 +1,4 @@
-STYLE=dejavu
+STYLE=local,twelvepoint,dejavu,kerning,sphinx
 
 # requires: docutils
 pdf: specyfikacja.rst

@@ -1,0 +1,8 @@
+styles:
+    literal:
+        textColor: purple
+    bullet-list:
+        spaceBefore: 3
+        spaceAfter: 5
+    title:
+        spaceAfter: 30
