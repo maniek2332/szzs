@@ -386,6 +386,13 @@ Lista zawodników (z poziomu klubu)
 Edycja zawodnika
 ^^^^^^^^^^^^^^^^
 
+* Korzystać z tej funkcji może klub oraz administrator.
+* Po uwczesnym wybraniu zawodnika wyświetlana jest strona z 
+  profilem tego zawodnika z możliwością edycji jego danych.
+* Wszystkie pola tekstowe z informacjami o zawodniku sa edytowalne.
+* Po wybraniu zdjęcia wyświetlane jest okno systemowe do wybrou pliku z nowym zdjęciem zawodnika.
+* Po wybraniu przycisku "Zapisz zmiany" system sprawdza poprawność edytowanych pól, jeśli któreś są niepoprawne pojawia się napis przy tych polach z informacją o tym, że są niepoprawne. W przypadku gdy wszystkie pola są poprawne system aktualizuje dane w bazie danych tgo zawodnika i wyświetla okno z informacją o poprawnej edycji danych zawodnika. 
+
 Lista zawodników do zatwierdzenia
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
