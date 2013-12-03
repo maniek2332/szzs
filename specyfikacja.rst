@@ -44,6 +44,9 @@ specyfikacja.rst    2013-11-30        Uzupełnienie historii zmian,
                                       zawodnikami.
 specyfikacja.rst    2013-12-03        Poprawki formatowania, poprawki
                                       literówek.
+specyfikacja.rst    2013-12-03        Dodanie makiet do wymagań
+                                      funkcjonalnych, uzupełnienie
+                                      wymagań niefunkcjonalnych.
 ==================  ================  ====================================
 
 
@@ -473,6 +476,9 @@ Zatwierdzenie zawodnika
 Wymagania niefunkcjonalne
 =========================
 
-.. note::
+Dostępność z urządzeń mobilnych
+-------------------------------
 
-    TODO
+Strona systemu powinna być dostępna z urządzeń mobilnych
+oraz poprawnie na nich wyświetlana.
+
