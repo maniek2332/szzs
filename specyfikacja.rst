@@ -42,6 +42,8 @@ specyfikacja.rst    2013-11-30        Uzupełnienie historii zmian,
                                       wymagań dotyczących zarządzania
                                       klubami, oraz zarządzania
                                       zawodnikami.
+specyfikacja.rst    2013-12-03        Poprawki formatowania, poprawki
+                                      literówek.
 ==================  ================  ====================================
 
 
@@ -237,17 +239,52 @@ Logowanie
 Zmiana hasła
 ^^^^^^^^^^^^
 
-* System pozwala każdemu zalogowanemu użytkownikowi na zmianę używanego do tej pory hasła na nowe. Operacja wywoływana jest wybranie linku "Zmiana hasła" na panelu zalogowanego użytkownika. Wyświetlana jest strona z formularzem do wypełnienia. Pierwsze pole służy do wpisania aktualnie używanego hasła, ma to na celu dodatkowego uwierzytelnienis użytkownika. Kolejne dwa pola są na wpisanie noweg hasła zgodnego z definicją hasła ze słownika pojęć w pkt 3. Jeśli wpisane aktualne hasło jest prawidłowe i pola z nowym hasłem są takie same i prawidłowe, wyświetlany jest komunikat o pomyślnej zmienie hasła.
+* System pozwala każdemu zalogowanemu użytkownikowi na zmianę używanego
+  do tej pory hasła na nowe.
+* Operacja wywoływana jest wybranie linku "Zmiana hasła" na panelu
+  zalogowanego użytkownika.
+* Wyświetlana jest strona z formularzem do wypełnienia.
+* Pierwsze pole służy do wpisania aktualnie używanego hasła,
+  ma to na celu dodatkowego uwierzytelnienie użytkownika.
+* Kolejne dwa pola są na wpisanie nowego hasła zgodnego z definicją hasła
+  ze słownika pojęć w pkt 3.
+* Jeśli wpisane aktualne hasło jest prawidłowe i pola z nowym hasłem są
+  takie same i prawidłowe, wyświetlany jest komunikat o pomyślnej zmianie hasła.
 
 .. note::
     Obrazek pomyslnej zmiany hasla
 
-* W przeciwnym przypadku obok danego pola formularza wyświetlany jest napis z przyczyną błedu operacji, która może być: Niepoprawne aktualne hasło, Nie prawidłowe nowe hasło, Nowe hasło w dwóch polach różni się od siebie. Następnie system umożliwia na wykonanie ponownej operacji zmiany hasła 
+* W przeciwnym przypadku obok danego pola formularza wyświetlany jest
+  napis z przyczyną błędu operacji, którą może być:
+ 
+   + Niepoprawne aktualne hasło,
+   + Nie prawidłowe nowe hasło,
+   + Nowe hasło w dwóch polach różni się od siebie.
+
+* System umożliwia powtórzenie operacji zmiany hasła.
 
 Przypomnienie hasła
 ^^^^^^^^^^^^^^^^^^^
 
-* Jest to opracja dla niezalogowanego użytkownika. Wywoływana jest poprzez wybranie linku "Przypomnienie hasła" na stronie logowania do systemu. Użytkownik przekierowany jest na stronę z formularzem z polem tekstowym na jego adres e-mail. Po wpisaniu danych są one sprawdzane pod kątem tego czy istnieje w bazie użytkownik z takim adresem e-mail. Po nie poprawnym dopasowaniu wyświetlany jest napis z informacją "Brak użytkownika w systemie z takim adresem e-mail". W przeciwnym wypadku system wysyła na adres podany przez użytkownika wiadomość e-mail z linkiem resetującym hasło. Po wybraniu linku Użytkownik przekierowany jest do strony z formularzem z dwoma polami tesktowymi. Po wpisaniu dwóch nowych haseł i zatwierdzeniu przyciskiem, hasło użytkownika zostaje sprawdzone pod kątem poprawności. Jeśli jest niepoprawne można wpisać znowu nowe hasło w polach. Po udanej walidacji hasło zostaje zmienione na nowe. Użytkownik jest informowany o tym komunikatem i po 3 sekundach użytkownik przekierowany jest do panelu użytkownika.
+* Jest to operacja dla niezalogowanego użytkownika.
+* Wywoływana jest poprzez wybranie linku "Przypomnienie hasła"
+  na stronie logowania do systemu.
+* Użytkownik przekierowany jest na stronę z formularzem z polem
+  tekstowym przeznaczonym na jego adres e-mail.
+* Po wpisaniu danych są one sprawdzane pod kątem tego czy istnieje w
+  bazie użytkownik z takim adresem e-mail.
+* Po nie poprawnym dopasowaniu wyświetlany jest napis z informacją
+  "Brak użytkownika w systemie z takim adresem e-mail".
+* W wypadku znalezienia pasującego użytkownika system wysyła na
+  jego adres e-mail wiadomość z linkiem resetującym hasło.
+* Po wybraniu linku Użytkownik przekierowany jest do strony z
+  formularzem z dwoma polami tekstowymi.
+* Po dwukrotnym wpisaniu nowego hasła i zatwierdzeniu przyciskiem
+  hasło użytkownika zostaje sprawdzone pod kątem poprawności.
+  Jeśli jest niepoprawne można wpisać znowu nowe hasło w polach.
+* Po udanej walidacji hasło zostaje zmienione na nowe.
+* Użytkownik jest informowany o tym komunikatem i po 3
+  sekundach użytkownik przekierowany jest do panelu użytkownika.
 
 .. note::
     Obrazek: pomyslna zmiana hasła
@@ -297,7 +334,7 @@ Dodanie klubu
 * W celu dodania klubu administrator musi wypełnić pola klas
   ``Klub`` i ``Użytkownik``.
 * Naciśnięcie przycisku "Dodaj" powoduje sprawdzenie poprawności
-pól.
+  pól.
 * Jeśli nie zostaną spełnione wymagania pól, wyświetlony zostanie
   komunikat z prośbą o poprawienie błędnych pól.
 * Jeśli wszystkie pola są poprawne to zostaną utworzone obiekty
@@ -387,11 +424,15 @@ Edycja zawodnika
 ^^^^^^^^^^^^^^^^
 
 * Korzystać z tej funkcji może klub oraz administrator.
-* Po uwczesnym wybraniu zawodnika wyświetlana jest strona z 
+* Po wcześniejszym wybraniu zawodnika wyświetlana jest strona z 
   profilem tego zawodnika z możliwością edycji jego danych.
-* Wszystkie pola tekstowe z informacjami o zawodniku sa edytowalne.
-* Po wybraniu zdjęcia wyświetlane jest okno systemowe do wybrou pliku z nowym zdjęciem zawodnika.
-* Po wybraniu przycisku "Zapisz zmiany" system sprawdza poprawność edytowanych pól, jeśli któreś są niepoprawne pojawia się napis przy tych polach z informacją o tym, że są niepoprawne. W przypadku gdy wszystkie pola są poprawne system aktualizuje dane w bazie danych tgo zawodnika i wyświetla okno z informacją o poprawnej edycji danych zawodnika. 
+* Po wybraniu zdjęcia wyświetlane jest okno systemowe do wyboru pliku z
+  nowym zdjęciem zawodnika.
+* Po wybraniu przycisku "Zapisz" system sprawdza poprawność edytowanych pól,
+  jeśli któreś są niepoprawne pojawia się napis przy tych polach z informacją
+  o tym, że są niepoprawne. W przypadku gdy wszystkie pola są poprawne
+  system aktualizuje dane w bazie danych tego zawodnika i wyświetla okno
+  z informacją o poprawnej edycji danych zawodnika. 
 
 Lista zawodników do zatwierdzenia
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
