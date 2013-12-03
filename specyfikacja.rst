@@ -209,10 +209,6 @@ w wydarzeniu.
 Wymagania funkcjonalne
 ======================
 
-.. note::
-
-    TODO
-
 Autoryzacja
 -----------
 
@@ -221,23 +217,25 @@ Logowanie
 
 * System umożliwia logowanie się użytkowników do systemu.
 
-.. note::
-
-    Tu obrazek
+.. image:: img/logowanie_(17).png
+   :width: 100%
 
 * W tym celu wymagane jest od użytkownika podanie loginu i hasła do
   formularza na stronie do logowania się do systemu.
 * Wpisane dane są przesyłane do systemu w postaci niejawnej do odczytania.
 * Po wpisaniu loginu i hasła są one porównywane z obiektami klasy ``Użytkownik``.
 * Jeśli nie udało się dopasować żadnego użytkownika  wyświetlony zostaje komunikat "Niepoprawny login lub hasło". Użytkownik jest przekierowywany na stronę logowania do systemu.
+
+.. image:: img/logowanie,_niepoprawne_(1).png
+   :width: 100%
+
 * W przypadku dopasowania danych logowania operacja jest finalizowana wyświetleniem panelu użytkownika zgodnie z jego uprawnieniami.
-
-.. note::
-
-    Tu też obrazek
 
 Zmiana hasła
 ^^^^^^^^^^^^
+
+.. image:: img/zmiana_hasla_(3).png
+   :width: 100%
 
 * System pozwala każdemu zalogowanemu użytkownikowi na zmianę używanego
   do tej pory hasła na nowe.
@@ -250,9 +248,6 @@ Zmiana hasła
   ze słownika pojęć w pkt 3.
 * Jeśli wpisane aktualne hasło jest prawidłowe i pola z nowym hasłem są
   takie same i prawidłowe, wyświetlany jest komunikat o pomyślnej zmianie hasła.
-
-.. note::
-    Obrazek pomyslnej zmiany hasla
 
 * W przeciwnym przypadku obok danego pola formularza wyświetlany jest
   napis z przyczyną błędu operacji, którą może być:
@@ -279,6 +274,10 @@ Przypomnienie hasła
   jego adres e-mail wiadomość z linkiem resetującym hasło.
 * Po wybraniu linku Użytkownik przekierowany jest do strony z
   formularzem z dwoma polami tekstowymi.
+
+.. image:: img/resetowanie_haslo_(4).png
+   :width: 100%
+
 * Po dwukrotnym wpisaniu nowego hasła i zatwierdzeniu przyciskiem
   hasło użytkownika zostaje sprawdzone pod kątem poprawności.
   Jeśli jest niepoprawne można wpisać znowu nowe hasło w polach.
@@ -286,14 +285,14 @@ Przypomnienie hasła
 * Użytkownik jest informowany o tym komunikatem i po 3
   sekundach użytkownik przekierowany jest do panelu użytkownika.
 
-.. note::
-    Obrazek: pomyslna zmiana hasła
+.. image:: img/panel_admina,_po_zmianie_hasla,_adm_(6).png
+   :width: 100%
 
 Panel główny administratora
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-    Obrazek: panel administratora
+.. image:: img/panel_admina_(5).png
+   :width: 100%
 
 * Panel ten jest dostępny tylko dla administratora
 * Udostępnia on następujące opcje:
@@ -309,8 +308,8 @@ Panel główny administratora
 Panel główny klubu
 ^^^^^^^^^^^^^^^^^^
 
-.. note::
-    Obrazek: panel klubu
+.. image:: img/panel_klubu_(12).png
+   :width: 100%
 
 * Panel ten jest dostępny tylko dla klubu
 * Udostępnia on następujące opcje:
@@ -327,8 +326,8 @@ Zarządzanie klubami
 Dodanie klubu
 ^^^^^^^^^^^^^
 
-.. note::
-    Obrazek: formularz dodawanie klubu
+.. image:: img/dodanie_klubu,_adm_(11).png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
 * W celu dodania klubu administrator musi wypełnić pola klas
@@ -371,8 +370,14 @@ Edycja klubu (z poziomu administratora)
   natychmiast - usuwającemu wyświetlony zostaje komunikat
   z informacją o skutkach tej akcji i prośbą o potwierdzenie.
 
+.. image:: img/edycja_klubu,_adm_(8).png
+   :width: 100%
+
 Edycja klubu (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: img/edycja_klubu,_klub_(16).png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
 * Edytujący może edytować pola obiektu klasy ``Klub``.
@@ -391,6 +396,9 @@ Zarządzanie zawodnikami
 Dodanie zawodnika
 ^^^^^^^^^^^^^^^^^
 
+.. image:: img/dodanie_zawodnika,_klub_(15).png
+   :width: 100%
+
 * Korzystać z tej funkcji może tylko klub.
 * W celu dodania zawodnika użytkownik musi wypełnić pola
   obiektu klasy ``Zawodnik``
@@ -407,6 +415,9 @@ Dodanie zawodnika
 Lista zawodników (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. image:: img/lista_zawodnikow,_adm_(9).png
+   :width: 100%
+
 * Korzystać z tej funkcji może tylko administrator.
 * Wyświetlona zostaje lista zatwierdzonych zawodników, wraz
   z informacją do którego klubu są przypisani.
@@ -414,6 +425,9 @@ Lista zawodników (z poziomu administratora)
 
 Lista zawodników (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: img/lista_zawodnikow,_klub_(13).png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
 * Wyświetlona zostaje lista zawodników przypisanych do klubu użytkownika,
@@ -444,6 +458,9 @@ Lista zawodników do zatwierdzenia
 
 Zatwierdzenie zawodnika
 ^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: img/szczegoly_zawodonika,_do_zatwierdzenia,adm_(14).png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
 * Wyświetlone zostają informacje o zawodniku.
