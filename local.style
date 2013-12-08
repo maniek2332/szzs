@@ -6,3 +6,5 @@ styles:
         spaceAfter: 5
     title:
         spaceAfter: 30
+    bodytext:
+        leading: 15
