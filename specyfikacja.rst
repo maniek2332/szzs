@@ -88,7 +88,7 @@ Zawodnik
 
 Zatwierdzony zawodnik
     Zawodnik dla którego pole ``zatwierdzony`` jest ustawione na
-    wartość ``true``.
+    wartość ``prawda``.
 
 Użytkownik
     Administrator lub Klub.
@@ -225,7 +225,7 @@ Autoryzacja
 Logowanie
 ^^^^^^^^^
 
-.. image:: img/logowanie_(17).png
+.. image:: img/logowanie.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko niezalogowany użytkownik.
@@ -239,14 +239,14 @@ Logowanie
   zostaje komunikat "Niepoprawny login lub hasło", a niezalogowany
   użytkownik jest przekierowywany na stronę logowania do systemu.
 
-.. image:: img/logowanie,_niepoprawne_(1).png
+.. image:: img/logowanie_niepoprawne.png
    :width: 100%
 
 
 Zmiana hasła
 ^^^^^^^^^^^^
 
-.. image:: img/zmiana_hasla_(3).png
+.. image:: img/zmiana_hasla.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko zalogowany użytkownik.
@@ -279,7 +279,7 @@ Przypomnienie hasła
 
 .. note::
 
-.. image:: img/przypomnienie_hasla_(5).png
+.. image:: img/przypomnienie_hasla.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko niezalogowany użytkownik.
@@ -304,13 +304,13 @@ Przypomnienie hasła
 
 .. note::
 
-.. image:: img/przypomnienie_hasla,_niepoprawne_(6).png
+.. image:: img/przypomnienie_hasla_niepoprawne.png
    :width: 100%
 
 Panel główny administratora
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: img/panel_admina_(5).png
+.. image:: img/panel_admina.png
    :width: 100%
 
 * Panel ten jest dostępny tylko dla administratora
@@ -329,7 +329,7 @@ Panel główny administratora
 Panel główny klubu
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: img/panel_klubu_(12).png
+.. image:: img/panel_klubu.png
    :width: 100%
 
 * Panel ten jest dostępny tylko dla klubu
@@ -349,7 +349,7 @@ Zarządzanie klubami
 Dodanie klubu
 ^^^^^^^^^^^^^
 
-.. image:: img/dodanie_klubu,_adm_(11).png
+.. image:: img/admin_dodanie_klubu.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
@@ -367,6 +367,9 @@ Dodanie klubu
 Lista klubów
 ^^^^^^^^^^^^
 
+.. image:: img/panel_admina_lista_klubow.png
+   :width: 100%
+
 * Korzystać z tej funkcji może tylko administrator.
 * Wyświetlona zostaje kompletna lista klubów w systemie.
 * Wybranie klubu z listy przekierowuje do jego edycji.
@@ -375,7 +378,7 @@ Edycja klubu (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Korzystać z tej funkcji może tylko administrator.
-* Edytujący może edytować pola obiektu ``Klub``
+* Może on edytować pola obiektu ``Klub``
   oraz powiązanego z nim obiektu ``Użytkownik``.
 * Naciśnięcie przycisku "Zapisz" powoduje sprawdzanie poprawności
   pól,
@@ -391,13 +394,13 @@ Edycja klubu (z poziomu administratora)
   natychmiast - usuwającemu wyświetlony zostaje komunikat
   z informacją o skutkach tej akcji i prośbą o potwierdzenie.
 
-.. image:: img/edycja_klubu,_adm_(8).png
+.. image:: img/admin_edycja_klubu.png
    :width: 100%
 
 Edycja klubu (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: img/edycja_klubu,_klub_(16).png
+.. image:: img/klub_edycja_klubu.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
@@ -417,7 +420,7 @@ Zarządzanie zawodnikami
 Dodanie zawodnika
 ^^^^^^^^^^^^^^^^^
 
-.. image:: img/dodanie_zawodnika,_klub_(15).png
+.. image:: img/klub_dodanie_zawodnika.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
@@ -434,7 +437,7 @@ Dodanie zawodnika
 Lista zawodników (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: img/lista_zawodnikow,_adm_(9).png
+.. image:: img/admin_lista_zawodnikow.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
@@ -445,7 +448,7 @@ Lista zawodników (z poziomu administratora)
 Lista zawodników (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: img/lista_zawodnikow,_klub_(13).png
+.. image:: img/klub_lista_zawodnikow.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
@@ -456,11 +459,13 @@ Lista zawodników (z poziomu klubu)
 Edycja zawodnika
 ^^^^^^^^^^^^^^^^
 
+.. image:: img/klub_edycja_zawodnika.png
+   :width: 100%
+
 * Korzystać z tej funkcji może klub oraz administrator.
 * Po wcześniejszym wybraniu zawodnika wyświetlana jest strona z 
   profilem tego zawodnika z możliwością edycji jego danych.
-* Po wybraniu zdjęcia wyświetlane jest okno systemowe do wyboru pliku z
-  nowym zdjęciem zawodnika.
+* Po wybraniu zdjęcia wyświetlane jest okno systemowe do wyboru pliku z nowym zdjęciem zawodnika.
 * Po wybraniu przycisku "Zapisz" system sprawdza poprawność edytowanych pól,
   jeśli któreś są niepoprawne pojawia się napis przy tych polach z informacją
   o tym, że są niepoprawne. W przypadku gdy wszystkie pola są poprawne
@@ -470,6 +475,9 @@ Edycja zawodnika
 Lista zawodników do zatwierdzenia
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. image:: img/admin_lista_zawodnikow_do_zatwierdzenia.png
+   :width: 100%
+
 * Korzystać z tej funkcji może tylko administrator.
 * Wyświetlona zostaje lista niezatwierdzonych zawodników, wraz
   z informacją do którego klubu są przypisani.
@@ -478,7 +486,7 @@ Lista zawodników do zatwierdzenia
 Zatwierdzenie zawodnika
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: img/szczegoly_zawodonika,_do_zatwierdzenia,adm_(14).png
+.. image:: img/admin_szczegoly_zawodnika_do_zatwierdzenia.png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
@@ -499,12 +507,18 @@ Wydarzenia
 Lista wydarzeń (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. image:: img/panel_admina_lista_wydarzen.png
+   :width: 100%
+
 * Korzystać z tej funkcji może tylko administrator.
 * Wyświetlona zostaje kompletna lista wydarzeń.
 * Wybranie wydarzenia z listy przekierowuje do jego edycji.
 
 Lista wydarzeń (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: img/klub_lista_wydarzen.png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
 * Wyświetlona zostaje kompletna lista wydarzeń, wraz z informacją
@@ -515,6 +529,9 @@ Lista wydarzeń (z poziomu klubu)
 
 Dodawanie wydarzenia
 ^^^^^^^^^^^^^^^^^^^^
+
+.. image:: img/admin_dodanie_wydarzenia.png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
 * Użytkownik może wypełnić pola obiektu ``Wydarzenie``.
@@ -529,6 +546,9 @@ Dodawanie wydarzenia
 
 Edycja wydarzenia
 ^^^^^^^^^^^^^^^^^
+
+.. image:: img/admin_edycja_wydarzenia.png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
 * Użytkownik może edytować pola obiektu ``Wydarzenie``.
@@ -548,6 +568,9 @@ Edycja wydarzenia
 Dołączenie do wydarzania
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. image:: img/klub_dolaczenie_do_wydarzenia.png
+   :width: 100%
+
 * Korzystać z tej funkcji może tylko klub.
 * Korzystać z tej funkcji można tylko wtedy, gdy
   klub nie jest zapisany na dane wydarzenie.
@@ -560,6 +583,9 @@ Dołączenie do wydarzania
 
 Rezygnacja z udziału w wydarzeniu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: img/klub_rezygnacja_z_wydarzenia.png
+   :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
 * Korzystać z tej funkcji można tylko wtedy, gdy
