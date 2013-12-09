@@ -4,6 +4,9 @@ styles:
     bullet-list:
         spaceBefore: 3
         spaceAfter: 5
+    item-list:
+        spaceBefore: 3
+        spaceAfter: 5
     title:
         spaceAfter: 30
     bodytext:
