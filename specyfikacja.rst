@@ -47,6 +47,9 @@ specyfikacja.rst    2013-12-03        Poprawki formatowania, poprawki
 specyfikacja.rst    2013-12-03        Dodanie makiet do wymagań
                                       funkcjonalnych, uzupełnienie
                                       wymagań niefunkcjonalnych.
+specyfikacja.rst    2013-12-09        Dodanie wymagań dotyczących
+                                      wydarzeń, poprawa wymagań
+                                      autoryzacji, poprawa zarysu systemu. 
 ==================  ================  ====================================
 
 
@@ -132,10 +135,10 @@ Klasa ``Użytkownik`` określona jest polami:
       zawierać drukowalne znaki z tabeli ASCII, w bazie danych hasło
       przechowywane jest w formie zahashowanej (funkcja skrótu SHA-1).
     * ``email`` - adres e-mail, pole tekstowe wg. specyfikacji RFC
-      adresu email, adresy e-mail użytkowników nie mogą się powtarzać.
+      adresu e-mail, adresy e-mail użytkowników nie mogą się powtarzać.
     * ``uprawnienia`` - uprawnienia użytkownika, jednoznakowe pole
       tekstowe, może przybierać wartości ``A`` (oznacza Administratora)
-      oraz ``K`` (oznacza Klub); pole te może być zmienione z poziomu
+      oraz ``K`` (oznacza Klub); pole to nie może być zmienione z poziomu
       systemu, wszystkie utworzone z poziomu systemu konta otrzymują
       tą wartość ustawioną na ``K``.
 
@@ -177,7 +180,7 @@ Klasa ``Zawodnik`` reprezentuje realnego zawodnika:
       pole wyboru daty.
     * ``zatwierdzony`` - informacja czy zawodnik został zatwierdzony
       przez administratora, pole typu boolean
-      (przyjmuje tylko wartości ``true`` i ``false``,
+      (przyjmuje tylko wartości ``true`` i ``false``),
       pole to zmienione może być tylko przez administratora,
       domyślnie przyjmuje wartość ``false``.
 
@@ -202,8 +205,8 @@ Zarys systemu
 Celem systemu jest usprawnienia zarządzania związkiem sportowym.
 Administrator systemu ma możliwość dodawania nowych klubów do systemu.
 Dodane kluby mają możliwość edycji swoich danych oraz dodawanie
-zawodników do swojej listy. System ułatwia zarządzanie klubem
-poprzez przypominanie o wydarzeniach okresowych. Administrator
+zawodników do swojej listy. Takie dodanie zawodnika musi
+zostać zatwierdzone przez administratora. Administrator
 ma możliwość dodawania wydarzeń. O dodanych wydarzeniach informowani
 są menedżerowie klubów, którzy mogą zgłosić swoją chęć uczestnictwa
 w wydarzeniu.
@@ -218,21 +221,23 @@ Autoryzacja
 Logowanie
 ^^^^^^^^^
 
-* System umożliwia logowanie się użytkowników do systemu.
-
 .. image:: img/logowanie_(17).png
    :width: 100%
 
-* W tym celu wymagane jest od użytkownika podanie loginu i hasła do
-  formularza na stronie do logowania się do systemu.
-* Wpisane dane są przesyłane do systemu w postaci niejawnej do odczytania.
-* Po wpisaniu loginu i hasła są one porównywane z obiektami klasy ``Użytkownik``.
-* Jeśli nie udało się dopasować żadnego użytkownika  wyświetlony zostaje komunikat "Niepoprawny login lub hasło". Użytkownik jest przekierowywany na stronę logowania do systemu.
+* Korzystać z tej funkcji może tylko niezalogowany użytkownik.
+* System umożliwia użytkownikowi wprowadzenie loginu i hasła.
+* Po wciśnięciu przycisku "Zaloguj" system sprawdza czy istnieje
+  użytkownik o takim loginie i haśle.
+* Jeśli taki użytkownik istnieje to niezalogowany użytkownik
+  zostaje zalogowany jako on oraz przekierowany na stronę
+  panelu głównego.
+* Jeśli nie udało się znaleźć pasującego użytkownika wyświetlony
+  zostaje komunikat "Niepoprawny login lub hasło", a niezalogowany
+  użytkownik jest przekierowywany na stronę logowania do systemu.
 
 .. image:: img/logowanie,_niepoprawne_(1).png
    :width: 100%
 
-* W przypadku dopasowania danych logowania operacja jest finalizowana wyświetleniem panelu użytkownika zgodnie z jego uprawnieniami.
 
 Zmiana hasła
 ^^^^^^^^^^^^
@@ -240,53 +245,62 @@ Zmiana hasła
 .. image:: img/zmiana_hasla_(3).png
    :width: 100%
 
-* System pozwala każdemu zalogowanemu użytkownikowi na zmianę używanego
-  do tej pory hasła na nowe.
-* Operacja wywoływana jest wybranie linku "Zmiana hasła" na panelu
-  zalogowanego użytkownika.
+* Korzystać z tej funkcji może tylko zalogowany użytkownik.
 * Wyświetlana jest strona z formularzem do wypełnienia.
-* Pierwsze pole służy do wpisania aktualnie używanego hasła,
-  ma to na celu dodatkowego uwierzytelnienie użytkownika.
-* Kolejne dwa pola są na wpisanie nowego hasła zgodnego z definicją hasła
-  ze słownika pojęć w pkt 3.
-* Jeśli wpisane aktualne hasło jest prawidłowe i pola z nowym hasłem są
-  takie same i prawidłowe, wyświetlany jest komunikat o pomyślnej zmianie hasła.
+* Po wciśnięciu przycisku "Zmień hasło" wykonywane jest sprawdzenie
+  poprawności pól:
 
-* W przeciwnym przypadku obok danego pola formularza wyświetlany jest
-  napis z przyczyną błędu operacji, którą może być:
+  #. czy pole "Aktualne hasło" zawiera obecne hasło użytkownika,
+  #. czy pola "Nowe hasło" i "Potwierdź nowe hasło" mają taką samą zawartość,
+  #. czy pole pole "Nowe hasło" zawiera hasło zgodne ze specyfikacją
+     z punktu 4.1 (pole ``hasło``).
+
+* Jeśli powyższe wymagania zostaną spełnione hasło użytkownika
+  zostanie zmienione, a użytkownik zostanie przekierowany
+  na stronę panelu głównego.
+
+* W przeciwnym przypadku użytkownik zostanie przekierowany na stronę
+  zmiany hasła oraz wyświetlony zostanie mu jeden lub więcej z
+  poniższych komunikatów:
  
-   + Niepoprawne aktualne hasło,
-   + Nie prawidłowe nowe hasło,
-   + Nowe hasło w dwóch polach różni się od siebie.
-
-* System umożliwia powtórzenie operacji zmiany hasła.
+   + "Niepoprawne aktualne hasło"
+     (jeśli niespełniony został warunek 1.),
+   + "Nowe hasło w dwóch polach różni się od siebie"
+     (jeśli niespełniony został warunek 2.),
+   + "Nieprawidłowe nowe hasło"
+     (jeśli niespełniony został warunek 3.).
 
 Przypomnienie hasła
 ^^^^^^^^^^^^^^^^^^^
 
-* Jest to operacja dla niezalogowanego użytkownika.
-* Wywoływana jest poprzez wybranie linku "Przypomnienie hasła"
-  na stronie logowania do systemu.
-* Użytkownik przekierowany jest na stronę z formularzem z polem
-  tekstowym przeznaczonym na jego adres e-mail.
-* Po wpisaniu danych są one sprawdzane pod kątem tego czy istnieje w
-  bazie użytkownik z takim adresem e-mail.
-* Po nie poprawnym dopasowaniu wyświetlany jest napis z informacją
-  "Brak użytkownika w systemie z takim adresem e-mail".
-* W wypadku znalezienia pasującego użytkownika system wysyła na
-  jego adres e-mail wiadomość z linkiem resetującym hasło.
-* Po wybraniu linku Użytkownik przekierowany jest do strony z
-  formularzem z dwoma polami tekstowymi.
+.. note::
+
+   Obrazek do poprawy!!!
 
 .. image:: img/resetowanie_haslo_(4).png
    :width: 100%
 
-* Po dwukrotnym wpisaniu nowego hasła i zatwierdzeniu przyciskiem
-  hasło użytkownika zostaje sprawdzone pod kątem poprawności.
-  Jeśli jest niepoprawne można wpisać znowu nowe hasło w polach.
-* Po udanej walidacji hasło zostaje zmienione na nowe.
-* Użytkownik jest informowany o tym komunikatem i po 3
-  sekundach użytkownik przekierowany jest do panelu użytkownika.
+* Korzystać z tej funkcji może tylko niezalogowany użytkownik.
+* Wyświetlana jest strona z formularzem gdzie użytkownik
+  może podać login oraz adres e-mail.
+* Po wciśnięciu przycisku "Przypomnij hasło" system sprawdza czy
+  w systemie istnieje użytkownik o podanym loginie i adresie e-mail.
+* Jeśli taki użytkownik istnieje to:
+ 
+  + jego hasło zostaje zmienione na losowo wygenerowany 10-znakowy
+    ciąg znaków (zgodny ze specyfikacją z punktu 4.1),
+  + do użytkownika zostaje wysłany e-mail zawierający wygenerowane
+    hasło,
+  + niezalogowany użytkownik zostaje przekierowany na stronę
+    logowania.
+
+* Jeśli taki użytkownik nie istnieje to niezalogowany użytkownik
+  zostaje przekierowany na stronę przypomnienia hasła i
+  wyświetlony zostaje mu komunikat: "Niepoprawny login lub e-mail".
+
+.. note::
+
+   Obrazek do poprawy!!!
 
 .. image:: img/panel_admina,_po_zmianie_hasla,_adm_(6).png
    :width: 100%
@@ -298,6 +312,8 @@ Panel główny administratora
    :width: 100%
 
 * Panel ten jest dostępny tylko dla administratora
+* W panelu wyświetlana jest lista najbliższych nadchodzących wydarzeń
+  (maksymalnie 10 wydarzeń na liście).
 * Udostępnia on następujące opcje:
 
   + Dodawanie klubu
@@ -315,6 +331,8 @@ Panel główny klubu
    :width: 100%
 
 * Panel ten jest dostępny tylko dla klubu
+* W panelu wyświetlana jest lista najbliższych nadchodzących wydarzeń
+  (maksymalnie 10 wydarzeń na liście).
 * Udostępnia on następujące opcje:
 
   + Edycja klubu
@@ -351,7 +369,7 @@ Lista klubów
 
 * Korzystać z tej funkcji może tylko administrator.
 * Wyświetlona zostaje kompletna lista klubów w systemie.
-* Wybranie klubu z listy przekierowuje do jego edycji
+* Wybranie klubu z listy przekierowuje do jego edycji.
 
 Edycja klubu (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -368,7 +386,7 @@ Edycja klubu (z poziomu administratora)
   + jeśli pola są błędnie wypełnione zostaje wyświetlony
     komunikat z prośbą o poprawę błędów.
 
-* Przycisk "Usuń powoduje usunięcie klubu i powiązanego
+* Przycisk "Usuń" powoduje usunięcie klubu i powiązanego
   z nim użytkownika z bazy. Usunięcie nie następuje
   natychmiast - usuwającemu wyświetlony zostaje komunikat
   z informacją o skutkach tej akcji i prośbą o potwierdzenie.
@@ -472,6 +490,89 @@ Zatwierdzenie zawodnika
   ``true``.
 * Naciśnięcie przycisku "Usuń" powoduje usunięcie z
   potwierdzeniem danego zawodnika.
+* Po zatwierdzeniu lub usunięciu zawodnika użytkownik
+  zostaje przekierowany na stronę listy zawodników
+  do zatwierdzenia.
+
+
+Wydarzenia
+----------
+
+Lista wydarzeń (z poziomu administratora)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Korzystać z tej funkcji może tylko administrator.
+* Wyświetlona zostaje kompletna lista wydarzeń.
+* Wybranie wydarzenia z listy przekierowuje do jego edycji.
+
+Lista wydarzeń (z poziomu klubu)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Korzystać z tej funkcji może tylko klub.
+* Wyświetlona zostaje kompletna lista wydarzeń, wraz z informacją
+  czy klub jest na to wydarzenie zapisany.
+* Wybranie wydarzenia z listy przekierowuje do dołączania na wydarzenie,
+  bądź rezygnacji z udziału w nim (zależnie od tego czy klub jest już
+  na to wydarzenie zapisany).
+
+Dodawanie wydarzenia
+^^^^^^^^^^^^^^^^^^^^
+
+* Korzystać z tej funkcji może tylko administrator.
+* Użytkownik może wypełnić pola obiektu ``Wydarzenie``.
+* Naciśnięcie przycisku "Dodaj" powoduje sprawdzenie poprawności
+  pól.
+* Jeśli nie zostaną spełnione wymagania pól, wyświetlony zostanie
+  komunikat z prośbą o poprawienie błędnych pól.
+* Jeśli wszystkie pola są poprawne to zostanie utworzony obiekt
+  ``Wydarzenie``.
+* Po udanym dodaniu wydarzenia użytkownik zostaje przekierowany
+  na stronę panelu głównego.
+
+Edycja wydarzenia
+^^^^^^^^^^^^^^^^^
+
+* Korzystać z tej funkcji może tylko administrator.
+* Użytkownik może edytować pola obiektu ``Wydarzenie``.
+* Naciśnięcie przycisku "Zapisz" powoduje sprawdzanie poprawności
+  pól,
+
+  + jeśli pola są wypełnione poprawnie, zmiany w wydarzeniu
+    zostają zapisane,
+  + jeśli pola są błędnie wypełnione zostaje wyświetlony
+    komunikat z prośbą o poprawę błędów.
+
+* Przycisk "Usuń" powoduje usunięcie z potwierdzeniem
+  danego wydarzenia.
+* Po zapisaniu lub usunięciu wydarzenia użytkownik zostaje
+  przekierowany na stronę listy wydarzeń.
+
+Dołączenie do wydarzania
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Korzystać z tej funkcji może tylko klub.
+* Korzystać z tej funkcji można tylko wtedy, gdy
+  klub nie jest zapisany na dane wydarzenie.
+* Wyświetlone zostają informacje o wydarzeniu.
+* Naciśnięcie przycisku "Dołącz" powoduje zapisanie klubu
+  na wydarzenie poprzez dopisanie go listy
+  ``kluby``, dla obecnego wydarzenia.
+* Po dołączeniu do wydarzenia użytkownik zostaje przekierowany
+  na stronę listy wydarzeń.
+
+Rezygnacja z udziału w wydarzeniu
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Korzystać z tej funkcji może tylko klub.
+* Korzystać z tej funkcji można tylko wtedy, gdy
+  klub jest już zapisany na dane wydarzenie.
+* Wyświetlone zostają informacje o wydarzeniu.
+* Naciśnięcie przycisku "Rezygnuj" powoduje usunięcie aktualnego
+  klubu z listy ``kluby``, dla obecnego wydarzenia.
+* Po rezygnacji z udziału w wydarzeniu użytkownik
+  zostaje przekierowany
+  na stronę listy wydarzeń.
+
 
 Wymagania niefunkcjonalne
 =========================
