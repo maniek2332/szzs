@@ -123,10 +123,10 @@ Definicje typów danych
 Użytkownik
 ----------
 
-``Użytkownik`` jest klasą reprezentującą użytkowników systemu
-którzy mogą się do niego logować. To czy użytkownik jest administratorem
+``Użytkownik`` jest obiektem reprezentującym użytkownika systemu
+który może się do niego logować. To czy użytkownik jest administratorem
 czy klubem jest określane poprzez sprawdzenie pola ``uprawnienia``.
-Klasa ``Użytkownik`` określona jest polami:
+Obiekt ``Użytkownik`` określony jest polami:
 
     * ``login`` - login do systemu pole tekstowe - 4-32 znaków, może
       zawierać litery łacińskie (wielkie i małe), cyfry oraz podkreślenia,
@@ -145,7 +145,7 @@ Klasa ``Użytkownik`` określona jest polami:
 Klub
 ----
 
-``Klub`` jest klasą przechowującą podstawowe informacje na temat
+``Klub`` jest obiektem przechowującym podstawowe informacje na temat
 klubu, listę zawodników grających w danym klubie oraz powiązanego
 użytkownika systemu. Zdefiniowane są pola:
 
@@ -160,7 +160,7 @@ użytkownika systemu. Zdefiniowane są pola:
 Zawodnik
 --------
 
-Klasa ``Zawodnik`` reprezentuje realnego zawodnika:
+Obiekt ``Zawodnik`` reprezentuje realnego zawodnika:
 
     * ``klub`` - klub do którego przypisany jest zawodnik, każdy
       zawodnik może być przypisany do tylko jednego klubu.
@@ -179,15 +179,19 @@ Klasa ``Zawodnik`` reprezentuje realnego zawodnika:
     * ``ostatnie_badanie`` - data ostatniego badania okresowego,
       pole wyboru daty.
     * ``zatwierdzony`` - informacja czy zawodnik został zatwierdzony
-      przez administratora, pole typu boolean
-      (przyjmuje tylko wartości ``true`` i ``false``),
+      przez administratora, pole typu logicznego
+      (przyjmuje tylko wartości ``prawda`` i ``fałsz``),
       pole to zmienione może być tylko przez administratora,
       domyślnie przyjmuje wartość ``false``.
+
+Obiekt
+------
+Zbiór informacji na dany temat
 
 Wydarzenie
 ----------
 
-Klasa reprezentująca wydarzenia sportowe, określona jest polami:
+Obiekt reprezentujący wydarzenia sportowe, określony jest polami:
 
     * ``nazwa`` - krótka nazwa wydarzenia, pole tekstowe 4-64 znaków.
     * ``data`` - dzień w którym ma się odbyć wydarzenie, pole wyboru
@@ -196,7 +200,7 @@ Klasa reprezentująca wydarzenia sportowe, określona jest polami:
       godziny, pole nieobowiązkowe.
     * ``opis`` - opis wydarzenia, pole tekstowe 10-5000 znaków.
     * ``kluby`` - lista klubów zapisanych na wydarzenie, lista obiektów
-      klasy ``Klub``.
+     ``Klub``.
 
 
 Zarys systemu
@@ -252,7 +256,7 @@ Zmiana hasła
 
   #. czy pole "Aktualne hasło" zawiera obecne hasło użytkownika,
   #. czy pola "Nowe hasło" i "Potwierdź nowe hasło" mają taką samą zawartość,
-  #. czy pole pole "Nowe hasło" zawiera hasło zgodne ze specyfikacją
+  #. czy pola "Nowe hasło" zawierają hasło zgodne ze specyfikacją
      z punktu 4.1 (pole ``hasło``).
 
 * Jeśli powyższe wymagania zostaną spełnione hasło użytkownika
@@ -275,16 +279,15 @@ Przypomnienie hasła
 
 .. note::
 
-   Obrazek do poprawy!!!
-
-.. image:: img/resetowanie_haslo_(4).png
+.. image:: img/przypomnienie_hasla_(5).png
    :width: 100%
 
 * Korzystać z tej funkcji może tylko niezalogowany użytkownik.
 * Wyświetlana jest strona z formularzem gdzie użytkownik
   może podać login oraz adres e-mail.
 * Po wciśnięciu przycisku "Przypomnij hasło" system sprawdza czy
-  w systemie istnieje użytkownik o podanym loginie i adresie e-mail.
+  zostały wypełnione pola na login i e-mail oraz czy w systemie 
+  istnieje użytkownik o podanym loginie i adresie e-mail.
 * Jeśli taki użytkownik istnieje to:
  
   + jego hasło zostaje zmienione na losowo wygenerowany 10-znakowy
@@ -294,15 +297,14 @@ Przypomnienie hasła
   + niezalogowany użytkownik zostaje przekierowany na stronę
     logowania.
 
-* Jeśli taki użytkownik nie istnieje to niezalogowany użytkownik
-  zostaje przekierowany na stronę przypomnienia hasła i
-  wyświetlony zostaje mu komunikat: "Niepoprawny login lub e-mail".
+* Jeśli pola zostały uzupełnione nie poprawnie lub taki użytkownik
+  nie istnieje to niezalogowany użytkownik zostaje przekierowany 
+  na stronę przypomnienia hasła i wyświetlony zostaje mu komunikat:
+  "Niepoprawny login lub e-mail".
 
 .. note::
 
-   Obrazek do poprawy!!!
-
-.. image:: img/panel_admina,_po_zmianie_hasla,_adm_(6).png
+.. image:: img/przypomnienie_hasla,_niepoprawne_(6).png
    :width: 100%
 
 Panel główny administratora
@@ -351,14 +353,12 @@ Dodanie klubu
    :width: 100%
 
 * Korzystać z tej funkcji może tylko administrator.
-* W celu dodania klubu administrator musi wypełnić pola klas
-  ``Klub`` i ``Użytkownik``.
 * Naciśnięcie przycisku "Dodaj" powoduje sprawdzenie poprawności
   pól.
 * Jeśli nie zostaną spełnione wymagania pól, wyświetlony zostanie
   komunikat z prośbą o poprawienie błędnych pól.
 * Jeśli wszystkie pola są poprawne to zostaną utworzone obiekty
-  klas ``Klub`` i ``Użytkownik``, które następnie zostaną
+  ``Klub`` i ``Użytkownik``, które następnie zostaną
   ze sobą powiązane.
 * Po udanym dodaniu klubu dodający zostaje przekierowany
   na stronę panelu głównego.
@@ -375,8 +375,8 @@ Edycja klubu (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Korzystać z tej funkcji może tylko administrator.
-* Edytujący może edytować pola obiektu klasy ``Klub``
-  oraz powiązanego z nim obiektu klasy ``Użytkownik``.
+* Edytujący może edytować pola obiektu ``Klub``
+  oraz powiązanego z nim obiektu ``Użytkownik``.
 * Naciśnięcie przycisku "Zapisz" powoduje sprawdzanie poprawności
   pól,
 
@@ -401,7 +401,7 @@ Edycja klubu (z poziomu klubu)
    :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
-* Edytujący może edytować pola obiektu klasy ``Klub``.
+* Edytujący może edytować pola obiektu ``Klub``.
 * Naciśnięcie przycisku "Zapisz" powoduje sprawdzanie poprawności
   pól,
 
@@ -421,15 +421,13 @@ Dodanie zawodnika
    :width: 100%
 
 * Korzystać z tej funkcji może tylko klub.
-* W celu dodania zawodnika użytkownik musi wypełnić pola
-  obiektu klasy ``Zawodnik``
 * Naciśnięcie przycisku "Dodaj" powoduje sprawdzenie poprawności
   pól.
 * Jeśli nie zostaną spełnione wymagania pól, wyświetlony zostanie
   komunikat z prośbą o poprawienie błędnych pól.
 * Jeśli wszystkie pola są poprawne to zostanie stworzony obiekt
-  klasy ``Zawodnik`` który zostanie powiązany z obiektem
-  klasy ``Klub`` obecnego użytkownika.
+  ``Zawodnik`` który zostanie powiązany z obiektem
+  ``Klub`` obecnego użytkownika.
 * Po udanym dodaniu zawodnika dodający zostaje przekierowany
   na stronę panelu głównego.
 
@@ -487,7 +485,7 @@ Zatwierdzenie zawodnika
 * Wyświetlone zostają informacje o zawodniku.
 * Naciśnięcie przycisku "Zatwierdź" powoduje ustawienie
   pola ``zatwierdzony`` danego na Zawodnika na wartość
-  ``true``.
+  ``prawda``.
 * Naciśnięcie przycisku "Usuń" powoduje usunięcie z
   potwierdzeniem danego zawodnika.
 * Po zatwierdzeniu lub usunięciu zawodnika użytkownik
@@ -582,4 +580,3 @@ Dostępność z urządzeń mobilnych
 
 Strona systemu powinna być dostępna z urządzeń mobilnych
 oraz poprawnie na nich wyświetlana.
-
