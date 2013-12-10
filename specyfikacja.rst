@@ -9,6 +9,7 @@ System zarządzania związkiem sportowym - specyfikacja
     PageBreak
 
 .. contents:: Spis treści
+   :depth: 2
 
 .. sectnum::
 
@@ -182,7 +183,7 @@ Obiekt ``Zawodnik`` reprezentuje realnego zawodnika:
       przez administratora, pole typu logicznego
       (przyjmuje tylko wartości ``prawda`` i ``fałsz``),
       pole to zmienione może być tylko przez administratora,
-      domyślnie przyjmuje wartość ``false``.
+      domyślnie przyjmuje wartość ``fałsz``.
 
 Obiekt
 ------
@@ -200,7 +201,7 @@ Obiekt reprezentujący wydarzenia sportowe, określony jest polami:
       godziny, pole nieobowiązkowe.
     * ``opis`` - opis wydarzenia, pole tekstowe 10-5000 znaków.
     * ``kluby`` - lista klubów zapisanych na wydarzenie, lista obiektów
-     ``Klub``.
+      ``Klub``.
 
 
 Zarys systemu
@@ -277,8 +278,6 @@ Zmiana hasła
 Przypomnienie hasła
 ^^^^^^^^^^^^^^^^^^^
 
-.. note::
-
 .. image:: img/przypomnienie_hasla.png
    :width: 100%
 
@@ -301,8 +300,6 @@ Przypomnienie hasła
   nie istnieje to niezalogowany użytkownik zostaje przekierowany 
   na stronę przypomnienia hasła i wyświetlony zostaje mu komunikat:
   "Niepoprawny login lub e-mail".
-
-.. note::
 
 .. image:: img/przypomnienie_hasla_niepoprawne.png
    :width: 100%
