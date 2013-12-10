@@ -6,7 +6,7 @@ System zarządzania związkiem sportowym - specyfikacja
 
 .. raw:: pdf
 
-    PageBreak
+    PageBreak oneColumn
 
 .. contents:: Spis treści
    :depth: 2
@@ -16,6 +16,12 @@ System zarządzania związkiem sportowym - specyfikacja
 .. raw:: pdf
 
     PageBreak
+
+.. footer::
+
+   .. class:: right
+
+    ###Page###
 
 
 Historia zmian
@@ -294,8 +300,6 @@ Przypomnienie hasła
    :width: 100%
 
 * Korzystać z tej funkcji może tylko niezalogowany użytkownik.
-* Wyświetlana jest strona z formularzem gdzie użytkownik
-  może podać login oraz adres e-mail.
 * Po wciśnięciu przycisku "Przypomnij hasło" system sprawdza czy
   zostały wypełnione pola na login i e-mail oraz czy w systemie 
   istnieje użytkownik o podanym loginie i adresie e-mail.

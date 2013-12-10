@@ -18,3 +18,5 @@ styles:
         keepWithNext: true
     stick-prev:
         keepWithPrevious: true
+pageSetup:
+    firstTemplate: coverPage
