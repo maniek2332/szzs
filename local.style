@@ -1,6 +1,9 @@
 styles:
+    base:
+        allowWidows: 4
+        allowOprhans: 5
     literal:
-        textColor: purple
+        textColor: black
     bullet-list:
         spaceBefore: 3
         spaceAfter: 5
@@ -11,3 +14,7 @@ styles:
         spaceAfter: 30
     bodytext:
         leading: 15
+    stick-next:
+        keepWithNext: true
+    stick-prev:
+        keepWithPrevious: true
