@@ -51,6 +51,8 @@ specyfikacja.rst    2013-12-03        Dodanie makiet do wymagań
 specyfikacja.rst    2013-12-09        Dodanie wymagań dotyczących
                                       wydarzeń, poprawa wymagań
                                       autoryzacji, poprawa zarysu systemu. 
+specyfikacja.rst    2013-12-10        Zdefiniowanie obiektu w słowniku,
+                                      Ostatnie drobne poprawki. 
 ==================  ================  ====================================
 
 
@@ -69,6 +71,9 @@ Ułatwia on również również pracę klubom sportowym zarejestrowanym w związ
 
 Słownik pojęć
 =============
+
+Obiekt
+    Zestaw danych na pewien temat.
 
 Administrator systemu
     Osoba zarządzająca całym systemem.
@@ -185,10 +190,6 @@ Obiekt ``Zawodnik`` reprezentuje realnego zawodnika:
       pole to zmienione może być tylko przez administratora,
       domyślnie przyjmuje wartość ``fałsz``.
 
-Obiekt
-------
-Zbiór informacji na dany temat
-
 Wydarzenie
 ----------
 
@@ -215,6 +216,10 @@ zostać zatwierdzone przez administratora. Administrator
 ma możliwość dodawania wydarzeń. O dodanych wydarzeniach informowani
 są menedżerowie klubów, którzy mogą zgłosić swoją chęć uczestnictwa
 w wydarzeniu.
+
+.. raw:: pdf
+
+    PageBreak
 
 
 Wymagania funkcjonalne
@@ -243,6 +248,9 @@ Logowanie
 .. image:: img/logowanie_niepoprawne.png
    :width: 100%
 
+.. raw:: pdf
+
+    PageBreak
 
 Zmiana hasła
 ^^^^^^^^^^^^
@@ -275,6 +283,10 @@ Zmiana hasła
    + "Nieprawidłowe nowe hasło"
      (jeśli niespełniony został warunek 3.).
 
+.. raw:: pdf
+
+    PageBreak
+
 Przypomnienie hasła
 ^^^^^^^^^^^^^^^^^^^
 
@@ -304,6 +316,10 @@ Przypomnienie hasła
 .. image:: img/przypomnienie_hasla_niepoprawne.png
    :width: 100%
 
+.. raw:: pdf
+
+    PageBreak
+
 Panel główny administratora
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -323,6 +339,10 @@ Panel główny administratora
   + Dodawanie wydarzenia
   + Lista wydarzeń
 
+.. raw:: pdf
+
+    PageBreak
+
 Panel główny klubu
 ^^^^^^^^^^^^^^^^^^
 
@@ -339,6 +359,10 @@ Panel główny klubu
   + Lista zawodników
   + Zmiana hasła (swojego)
   + Lista wydarzeń
+
+.. raw:: pdf
+
+    PageBreak
 
 Zarządzanie klubami
 -------------------
@@ -360,6 +384,9 @@ Dodanie klubu
 * Po udanym dodaniu klubu dodający zostaje przekierowany
   na stronę panelu głównego.
 
+.. raw:: pdf
+
+    PageBreak
 
 Lista klubów
 ^^^^^^^^^^^^
@@ -370,6 +397,10 @@ Lista klubów
 * Korzystać z tej funkcji może tylko administrator.
 * Wyświetlona zostaje kompletna lista klubów w systemie.
 * Wybranie klubu z listy przekierowuje do jego edycji.
+
+.. raw:: pdf
+
+    PageBreak
 
 Edycja klubu (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -394,6 +425,10 @@ Edycja klubu (z poziomu administratora)
 .. image:: img/admin_edycja_klubu.png
    :width: 100%
 
+.. raw:: pdf
+
+    PageBreak
+
 Edycja klubu (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -410,6 +445,10 @@ Edycja klubu (z poziomu klubu)
     do panelu głównego,
   + jeśli pola są błędnie wypełnione zostaje wyświetlony
     komunikat z prośbą o poprawę błędów.
+
+.. raw:: pdf
+
+    PageBreak
 
 Zarządzanie zawodnikami
 -----------------------
@@ -431,6 +470,10 @@ Dodanie zawodnika
 * Po udanym dodaniu zawodnika dodający zostaje przekierowany
   na stronę panelu głównego.
 
+.. raw:: pdf
+
+    PageBreak
+
 Lista zawodników (z poziomu administratora)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -442,6 +485,10 @@ Lista zawodników (z poziomu administratora)
   z informacją do którego klubu są przypisani.
 * Wybranie zawodnika z listy powoduje rozpoczęcie jego edycji.
 
+.. raw:: pdf
+
+    PageBreak
+
 Lista zawodników (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -452,6 +499,10 @@ Lista zawodników (z poziomu klubu)
 * Wyświetlona zostaje lista zawodników przypisanych do klubu użytkownika,
   wraz z informacją czy zawodnik ten jest zatwierdzony.
 * Wybranie zawodnika z listy powoduje rozpoczęcie jego edycji.
+
+.. raw:: pdf
+
+    PageBreak
 
 Edycja zawodnika
 ^^^^^^^^^^^^^^^^
@@ -469,6 +520,10 @@ Edycja zawodnika
   system aktualizuje dane w bazie danych tego zawodnika i wyświetla okno
   z informacją o poprawnej edycji danych zawodnika. 
 
+.. raw:: pdf
+
+    PageBreak
+
 Lista zawodników do zatwierdzenia
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -479,6 +534,10 @@ Lista zawodników do zatwierdzenia
 * Wyświetlona zostaje lista niezatwierdzonych zawodników, wraz
   z informacją do którego klubu są przypisani.
 * Wybranie zawodnika z listy powoduje przekierowanie do jego zatwierdzania.
+
+.. raw:: pdf
+
+    PageBreak
 
 Zatwierdzenie zawodnika
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -498,6 +557,10 @@ Zatwierdzenie zawodnika
   do zatwierdzenia.
 
 
+.. raw:: pdf
+
+    PageBreak
+
 Wydarzenia
 ----------
 
@@ -511,6 +574,10 @@ Lista wydarzeń (z poziomu administratora)
 * Wyświetlona zostaje kompletna lista wydarzeń.
 * Wybranie wydarzenia z listy przekierowuje do jego edycji.
 
+.. raw:: pdf
+
+    PageBreak
+
 Lista wydarzeń (z poziomu klubu)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -523,6 +590,10 @@ Lista wydarzeń (z poziomu klubu)
 * Wybranie wydarzenia z listy przekierowuje do dołączania na wydarzenie,
   bądź rezygnacji z udziału w nim (zależnie od tego czy klub jest już
   na to wydarzenie zapisany).
+
+.. raw:: pdf
+
+    PageBreak
 
 Dodawanie wydarzenia
 ^^^^^^^^^^^^^^^^^^^^
@@ -540,6 +611,10 @@ Dodawanie wydarzenia
   ``Wydarzenie``.
 * Po udanym dodaniu wydarzenia użytkownik zostaje przekierowany
   na stronę panelu głównego.
+
+.. raw:: pdf
+
+    PageBreak
 
 Edycja wydarzenia
 ^^^^^^^^^^^^^^^^^
@@ -562,6 +637,10 @@ Edycja wydarzenia
 * Po zapisaniu lub usunięciu wydarzenia użytkownik zostaje
   przekierowany na stronę listy wydarzeń.
 
+.. raw:: pdf
+
+    PageBreak
+
 Dołączenie do wydarzania
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -578,6 +657,10 @@ Dołączenie do wydarzania
 * Po dołączeniu do wydarzenia użytkownik zostaje przekierowany
   na stronę listy wydarzeń.
 
+.. raw:: pdf
+
+    PageBreak
+
 Rezygnacja z udziału w wydarzeniu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -593,6 +676,10 @@ Rezygnacja z udziału w wydarzeniu
 * Po rezygnacji z udziału w wydarzeniu użytkownik
   zostaje przekierowany
   na stronę listy wydarzeń.
+
+.. raw:: pdf
+
+    PageBreak
 
 
 Wymagania niefunkcjonalne
